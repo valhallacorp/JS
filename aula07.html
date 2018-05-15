@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ 	<!-- <script src="js/functions.js"></script> -->
+	<meta charset="utf-8">
+	<title>Aula 07 - JS</title>
+</head>
+<body>
+	<script>
+
+		/*
+			operadores logicos e de comparação
+			== é igual a 
+			=== igual em valor e tipo 
+			!= diferente
+			!== diferente em valor e tipo
+			> maior que
+			< menor que
+			>= maior igual
+			<= menor igual
+
+			&& e
+			|| ou
+			! nao
+			
+			operador ternario ex (var situacao = (idade >= 18) ? 'Maioridade':'Menor';)
+
+		*/
+		var idade = 16;
+
+		var situacao = (idade >= 18) ? 'Maioridade':'Menor';
+
+		var n = 5;
+		if (n > 5) {
+			console.log('1º Condição verdadeira')
+		}else if (n == 5){
+			console.log('2º Condição verdadeira')
+		}
+		else{
+			console.log('Condição Falsa');
+		}
+
+		console.log(situacao);
+
+		var diaSemana = new Date().getDay();
+		switch(diaSemana){
+			case 6:{
+				console.log('Hoje é Sabado! #partiubalada');
+				break;
+			}
+			case 0:{
+				console.log('Hoje é Domingo! #curandoaressaca');
+				break;
+			}
+			default:{
+				console.log('Dia normal: trabalho + estudo!')
+				break;
+			}
+		}
+
+		var linguagens = ['PHP', 'JAVA', 'C++', 'ASP', 'CSS'];
+
+		for (i = 0; i < linguagens.length ; i++) {
+			if(i == 2) continue; // pula apenas o indice 2 neste caso, caso use o break encerra-se a repetição
+			console.log(linguagens[i]);
+		}
+
+		var contador = 0;
+		while(contador < linguagens.length){
+			
+			console.log(linguagens[contador]);
+			contador++;
+		}
+	</script>
+</body>
+</html>

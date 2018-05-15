@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ 	<!-- <script src="js/functions.js"></script> -->
+	<meta charset="utf-8">
+	<title>Aula 05 - JS</title>
+</head>
+<body>
+	<script>
+
+		var txt = "isso é um texto qualquer em uma caixa d'agua qualquer ";
+
+		var numero = 9.658;
+
+		//console.log(txt.length); conta quantos caracteres tem
+		console.log(txt.lastIndexOf('qualquer')); // A função indexOf retorna a posição onde começa a ocorrer o termo que foi pesquisado pela primeira vez e lastIndexOf retorna a posição onde começa o termo que foi pesquisado pela ultima vez
+
+		console.log(txt.search('qualquer')); //parecido com a função indexOf porem o search aceita expressões regulares
+
+		console.log(txt.slice(0, 4)); //retorna apenas o que foi delimitado como parametro
+
+		console.log(txt.substring(0, 8));
+
+		console.log(txt.substr(0, 15));
+
+		console.log(txt.replace('d\'agua','papelão')); //substitui a ocorrencia procurada no primeiro parametro pela passada no segundo parametro
+
+		console.log(txt.toUpperCase()); // deixa tudo em maiusculo
+
+		console.log(txt.toLowerCase()); // deixa tudo em minusculo
+
+		console.log(numero.toFixed(2)); //fixa o numero de casas depois da virgula, a função ja se encarrega de arredondar o numero
+
+		console.log(numero.toPrecision(2)); //defini a quantidade de digitos que vc deseja no seu numero
+
+
+
+	</script>
+</body>
+</html>

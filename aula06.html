@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ 	<!-- <script src="js/functions.js"></script> -->
+	<meta charset="utf-8">
+	<title>Aula 06 - JS</title>
+</head>
+<body>
+	<script>
+		var d = new Date(); // data e hora atual
+
+		var dComMilesegundos = new Date(86400000); //01/01/1970 considerado o minuto 0 de datas em JS
+
+		//js ja exibe as datas em formato de texto igual ao toString
+		
+		console.log(d);
+
+		console.log(dComMilesegundos);
+
+		console.log(d.toUTCString()); //oculta quantas horas esta a mais ou a menos
+
+		console.log(d.toDateString()); //retorna a data até o ano apenas, deixando local e fuso horario de fora
+
+		console.log('Dia do ano: ' + d.getDate()); //pega o dia do mes em que nos encontramos de 0 a 31
+
+		console.log('Dia da semana: '+d.getDay()); //pega o dia da semana de 0 a 6, 0 = domingo, 1 = segunda, 2 = terça, 3 = quarta, 4 = quinta, 5 = sexta, 6 = sabado
+
+		console.log('Ano: ' +d.getFullYear()); // retorna o ano com 4 digitos
+
+		console.log('Hora: '+d.getHours()); //retorna a hora de 0 a 23
+
+		console.log('Milesegundos: '+d.getMilliseconds()); // retorna os milesegundos
+
+		console.log('Minutos: '+d.getMinutes()); //retorna os minutos de 0 a 59
+
+		console.log('Mes: '+d.getMonth()); //retorna o mes de 0 a 11
+
+		console.log('Segundos: '+d.getSeconds()); //retorna os segundos de 0 a 59
+
+		console.log('Milisegundos a partir de 01/01/1970: '+d.getTime()); // retorna a quantidade de milesegundos a partir de 01/01/1970
+
+
+		function formataData(data = new Date()){
+			var dia = data.getDate();
+			var mes = data.getMonth()+1;
+			var ano = data.getFullYear();
+
+			if (dia.toString().length == 1) {
+				dia == '0' + dia;
+			}
+
+			if (mes.toString().length == 1) {
+				mes = '0'+mes;
+			}
+
+			return dia+'/'+mes+'/'+ano;
+		}
+
+		console.log(formataData());
+	</script>
+</body>
+</html>

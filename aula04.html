@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ 	<!-- <script src="js/functions.js"></script> -->
+	<meta charset="utf-8">
+	<title>Aula 04 - JS</title>
+</head>
+<body>
+	<script>
+
+		var frutas = ['Banana', 'Abacaxi', 'Maçã'];
+		var pessoa = {
+			nome: 'Lucas', 
+			sobrenome: 'Limoni', 
+			idade: 29, 
+			andar: function(){
+				alert('Caminhando')
+			}
+		};
+
+		frutas.push('Pitanga'); //add item ao final do array com a função push nativa do js
+
+		frutas.unshift('Laranja'); //add elementos no começo do array
+
+		//frutas.pop(); //função inversa ao push, remove o ultimo elemento adicionado se não for passado nenhum parametro
+
+		//frutas.shift(); // faz a mesma coisa que o pop porem remove o primeiro elemento do array
+
+
+
+		console.log(pessoa);
+		//console.log(pessoa.andar());
+		console.log(frutas);
+		console.log(frutas.toString());
+
+		frutas.sort(); //ordena de forma crescente
+
+		console.log(frutas.join( ' - ' ))
+
+		frutas.reverse(); //inverte a ordem do array
+
+		console.log(frutas.join( ' - ' ))
+
+		//alert(frutas.join(' - '));
+		//alert(pessoa);
+	</script>
+</body>
+</html>
