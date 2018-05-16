@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ 	<!-- <script src="js/functions.js"></script> -->
+	<meta charset="utf-8">
+	<title>Aula 08 - JS</title>
+</head>
+<body>
+	<p>Informe um número entre 10 e 20: </p>
+	<input type="text" id="numero">
+	<button onclick="verifica()" >Verificar</button>
+	<p id="msg"></p>
+	<script>
+		function verifica(){
+			var x = document.getElementById('numero').value;
+			try{
+			
+			if (x == '' || x == ' ') throw 'Informe um valor'; // comparando se o valor esta vazio ou com apenas um espaço
+			
+			if (isNaN(x)) throw 'Não é um número, informe um valor valido!'; // esta fazendo uma comparação Is Not a Numbem, se não é um numero
+
+			x = Number(x); //força com que o JS trabalhe o X como um numero
+
+			if (x < 10 || x > 20) throw 'Informe um numero entre 10 e 20';
+
+			
+			document.getElementById('msg').innerHTML = 'Perfeito, valor esta correto';// joga dentro do is MSG a menssagem que esta sendo atribuida no innerHTML
+			
+			}catch(erro){
+				document.getElementById('msg').innerHTML = 'Erro: '+erro; // todos os erros passados pelos throw são jogadas no id msg
+			}finally{
+				//executa essa parte obrigatoriamente
+				document.getElementById('numero').value = ''; //joga dentro do que tiver o id = numero o valo '' que esta sendo atribuido ao value
+			}
+
+		}
+	
+		
+	</script>
+</body>
+</html>
