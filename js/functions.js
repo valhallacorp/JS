@@ -1,1 +1,5 @@
-alert('Este é meu primeiro codigo em JS');
+function enviar(elemento){
+    var x = document.querySelectorAll('#formulario-senha div input');
+
+    
+}
