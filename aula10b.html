@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ 	<!-- <script src="js/functions.js"></script> -->
+	<meta charset="utf-8">
+	<title>Aula 10 - JS</title>
+
+	<!-- <style >
+		.zebrada{background: silver;}
+	</style>
+</head>
+<body >
+	<table class="zebra">
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Fone</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>Lucas</th>
+				<th>0xx00 00000-0000</th>
+			</tr>
+			<tr>
+				<th>Eduardo</th>
+				<th>0xx00 00000-0000</th>
+			</tr>
+			<tr>
+				<th>Limoni</th>
+				<th>0xx00 00000-0000</th>
+			</tr>
+			<tr>
+				<th>Martins</th>
+				<th>0xx00 00000-0000</th>
+			</tr>
+		</tbody>
+	</table>
+	<script>
+		
+		window.onload = function(){
+			var zebrar = document.querySelectorAll('.zebra tbody tr');
+			for (var i = 0 ; i< zebrar.length; i+=2) {
+				zebrar[i].className = 'zebrada';
+			}
+		};
+
+	</script> -->
+</head>
+<body>
+	<div id="msg">
+		
+
+	</div>
+	<input type="button" value="Voltar" onclick="voltar()">
+	<input type="button" value="Avançar" onclick="avancar()">
+	<input type="button" value="Cancelar" onclick="clearInterval(intervalo)">
+	<script>
+		console.log(window.location.href);
+		
+		function avancar(){
+			window.history.forward();
+		}
+
+		function voltar(){
+			window.history.back();
+		}
+
+		//window.localStorage.setItem('chave','valor'); salva informação de forma permanente no pc do usuario, por chave e valo
+
+		//window.sessionStorage.setItem('nome','Limoni'); salva informação no pc do usuario de forma não permanente, quando o navegador é fechado a informação se perde
+
+		window.sessionStorage.setItem('nome2','Limoni');
+
+		//window.localStorage.setItem('nome','Lucas');
+
+		document.getElementById('msg').innerHTML = window.sessionStorage.getItem('nome2');
+
+		//window.open('url','nome','largura e altura') criando pop-up
+
+		//var janela = window.open('','Janela Teste Pop-UP','width=500','height=400');
+
+		//janela.opener.document.write('Isso é um texto para a minha janela principal');
+		//janela.document.write('Isso é um texto para a minha janela pop-up');
+
+		//var intervalo = setInterval(msginterval, 1000);
+
+		//var msg = setTimeout(msgtimeout, 5000); //executa uma função em determinado tempo
+
+		var intervalo = setInterval(verificaFoco, 1000);
+		var contador = 0;
+		function verificaFoco(){
+			if (!document.hasFocus()) {
+				contador++;
+				console.log(contador);
+				if(contador >= 10){
+					msgtimeout();
+					clearInterval(intervalo);
+				}
+			}
+		}
+
+		function msgtimeout(){
+			document.getElementById('msg').innerHTML = 'Obrigado por visitar!';
+		}
+		
+
+		function msginterval(){
+			console.log('Msg via Interval');
+		}
+	</script>
+
+</body>
+</html>

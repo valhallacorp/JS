@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ 	<!-- <script src="js/functions.js"></script> -->
+	<meta charset="utf-8">
+	<title>Aula 10 - JS</title>
+
+	<!-- <style >
+		.zebrada{background: silver;}
+	</style>
+</head>
+<body >
+	<table class="zebra">
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Fone</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>Lucas</th>
+				<th>0xx00 00000-0000</th>
+			</tr>
+			<tr>
+				<th>Eduardo</th>
+				<th>0xx00 00000-0000</th>
+			</tr>
+			<tr>
+				<th>Limoni</th>
+				<th>0xx00 00000-0000</th>
+			</tr>
+			<tr>
+				<th>Martins</th>
+				<th>0xx00 00000-0000</th>
+			</tr>
+		</tbody>
+	</table>
+	<script>
+		
+		window.onload = function(){
+			var zebrar = document.querySelectorAll('.zebra tbody tr');
+			for (var i = 0 ; i< zebrar.length; i+=2) {
+				zebrar[i].className = 'zebrada';
+			}
+		};
+
+	</script> -->
+</head>
+<body>
+	<input type="button" value="Voltar" onclick="voltar()" name="">
+	<input type="button" value="Avançar" onclick="avancar()" name="">
+	<script>
+		console.log(window.location.href);
+		
+		function avancar(){
+			window.history.forward();
+		}
+
+		function voltar(){
+			window.history.back();
+		}
+	</script>
+
+</body>
+</html>

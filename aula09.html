@@ -5,12 +5,178 @@
 	<meta charset="utf-8">
 	<title>Aula 09 - JS</title>
 </head>
-<body>
-	<p id="demo"></p>
+<body onload="alerta()">
+	<h1 id="demo" onclick="clique1(this)"></h1>
+
+	<h1 id="demo2"></h1>
+
+	<h1 id="demo3" onmouseover="mousein()" onmouseout="mouseout(this)"></h1>
+
+	<h1 id="demo4" onmousedown="pressionar(this)" onmouseup="soltar(this)"></h1>
+	<p class="exemplo"></p>
+	<p class="exemplo"></p>
+	<p class="exemplo"></p>
+	<div class="exemplo">
+		<select name="" id="selecao" onchange="selecao()">
+			<option value="opcao1">Opção 1</option>
+			<option value="opcao2">Opção 2</option>
+			<option value="opcao3">Opção 3</option>
+		</select>
+	</div>
+
+	<input type="text" id="input" onchange="input()" name="" onfocus="digitar(this)" onchange="mouseoff(this)" placeholder="Ao clicar as letras ficarão azuis">
+	<p id="digitarInput"></p>
+
+	<img id="imagem" src="imagem.jpg" alt="texto alternativo">
+
 	<script>
 		
-		document.getElementById('demo').innerHTML = 'Texto do meu paragrafo';
+		document.getElementById('demo').innerHTML = 'Clique Aqui!';
+		document.getElementById('demo2').innerHTML = 'Clique Aqui!'; 
+		document.getElementById('demo3').innerHTML = 'Passe o mouse aqui!';
+		document.getElementById('demo4').innerHTML = 'Pressione aqui!';//busca o elemento pelo ID que deve ser unico
+		document.getElementsByTagName('p'); //Busca todos os elementos que tem a tag passada no documento DOOM
 
+		var x = document.getElementsByClassName('exemplo'); //Busca todos os elementos com a classe "exemplo";
+
+		// x[0].innerHTML = "Paragrafo 1";
+		// x[1].innerHTML = "Paragrafo 2";
+		// x[2].innerHTML = "Paragrafo 3";
+
+		var x = document.querySelectorAll('p.exemplo');//Retorna apenas neste caso tudo que esta como p.exemplo
+
+		var y = document.querySelectorAll('div.exemplo');
+
+		console.log(document.getElementsByTagName('p'));//retorna tudo que tiver a tag p
+
+
+
+		/* document.baseURI = retorna a url absoluta do documento
+		** document.body = retorna a tag body
+		** document.doctype = retona o doctype
+		** document.documentURI = retorna a URL absoluta do documento
+		** document.domain
+		** document.head = retorna o que esta dentro da tag head
+		** document.inputEncoding = retorna o charset
+		** document.lastModified = retorna a ultima modificação
+		** document.title = retorna o que esta na tag title
+		** document.URL = retorna a url do documento
+		** document.forms = retorna os formularios
+		** document.links = retorna o links
+		** document.images = retorna as imagens
+		** document.scripts = retorna os scripts
+
+
+		*/
+		/*console.log(document.baseURI);
+		console.log(document.body);
+		console.log(document.doctype);
+		console.log(document.documentURI);
+		console.log(document.domain);
+		console.log(document.head);
+		console.log(document.inputEncoding);
+		console.log(document.lastModified);
+		console.log(document.title);
+		console.log(document.URL);
+		console.log(document.forms);
+		console.log(document.links);
+		console.log(document.images);
+		console.log(document.scripts);*/
+
+
+		console.log(document.getElementsByClassName('exemplo'));//retorna tudo que tiver a classe exemplo
+
+		console.log(x);
+
+		console.log(y);
+
+
+		//document.write('Isso é um teste');
+
+		document.getElementById('imagem').alt = 'Texto escrito em JS';
+
+		//buscar JavaScript Style Reference
+		document.getElementById('demo').style.color = 'red';
+		document.getElementById('demo').style.marginLeft = '50px';
+		document.getElementById('demo2').style.marginLeft = '50px';
+
+		document.getElementById('imagem').style.marginLeft = '50px';
+
+		document.getElementById('imagem').style.marginTop = '30px';
+
+
+		document.getElementById('selecao').style.marginLeft = '50px';
+
+		document.getElementById('input').style.marginLeft = '50px';
+		document.getElementById('input').style.marginTop = '30px';
+
+		document.getElementById('input').style.width = '200px';
+
+
+		document.getElementById('demo3').style.marginLeft = '50px';
+
+		document.getElementById('demo4').style.marginLeft = '50px';
+
+		function clique1(elemento){
+			elemento.innerHTML = 'Obrigado por Clicar!';
+		}
+
+		function clique2(){
+			document.getElementById('demo2').innerHTML = "Obrigado por Clicar!";
+		}
+
+		document.getElementById('demo2').onclick = clique2;
+
+		function alerta(){
+			alert('A pagina foi Carregada');
+		}
+
+
+		function selecao(){
+			alert('Opção Alterada!');
+		}
+
+		function input(){
+			alert('Opação Alterada!');
+		}
+
+		function mousein(){
+			document.getElementById('demo3').innerHTML = "O mouse esta sobre o Elemento!";
+		}
+
+		function mouseout(elemento){
+			elemento.innerHTML = "Passe o mouse aqui!"
+		}
+
+		function pressionar(elemento){
+			elemento.innerHTML = "Você esta pressionando o botão do mouse!"
+		}
+
+		function soltar(elemento){
+			elemento.innerHTML = "Você soltou o botão do mouse!"
+		}
+
+		function digitar(elemento){
+			elemento.style.backgroundColor = "Blue";
+		}
+
+		function mouseoff(elemento){
+			elemento.style.backgroundColor = "none";
+		}
+
+
+		/*		
+		** Eventos
+		** onclick
+		** onload
+		** onchange
+		** onmouseover
+		** onmouseout
+		** onfocus
+		** onmousedown
+		** onmouseup
+		*/
 	</script>
+
 </body>
 </html>
